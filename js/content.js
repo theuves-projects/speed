@@ -10,7 +10,6 @@ chrome.runtime.onMessage.addListener(function (req, _, sendResponse) {
           return video && typeof video.playbackRate === 'number'
             ? video.playbackRate
             : 1;
-
         })()
       });
       break
