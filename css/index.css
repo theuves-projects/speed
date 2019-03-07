@@ -1,0 +1,46 @@
+body {
+  margin: 20px;
+  text-align: center;
+  font-family: Georgia, serif;
+}
+
+/**
+ * Container que desenhará a seta para baixo
+ */
+.arrow {
+  position: relative;
+  display: inline-block;
+}
+.arrow::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: calc(-8px);
+  left: 50%;
+  transform: translateX(calc(-50%));
+  border: solid 3px transparent;
+  border-top-color: black;
+}
+
+/**
+ * Container do input
+ */
+#container {
+  --width: 200px;
+  width: var(--width);
+  overflow-x: hidden;
+  cursor: w-resize;
+}
+#range {
+  display: flex;
+  padding: 0 calc(var(--width) / 2);
+  width: 300px;
+  height: 20px;
+  justify-content: space-between;
+}
+.rate {
+  width: 1px;
+  height: 100%;
+  background-color: #666;
+}

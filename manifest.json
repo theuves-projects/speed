@@ -1,20 +1,30 @@
 {
-  "name": "A browser action with a popup that changes the page color",
-  "description": "Change the current page color",
-  "version": "1.0",
+  "name": "Speed",
+  "description": "Change the speed of a video in any page.",
+  "version": "0.1",
   "permissions": [
     "activeTab"
   ],
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*"],
-      "js": [ "content.js" ]
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "./js/content.js"
+      ]
     }
    ],
   "browser_action": {
-      "default_title": "Set this page's color.",
-      "default_icon": "icon.png",
-      "default_popup": "popup.html"
+    "default_title": "Speed",
+    "default_popup": "./popup.html",
+    "default_icon": {
+      "16": "./icons/icon-16.png",
+      "32": "./icons/icon-32.png",
+      "64": "./icons/icon-64.png",
+      "128": "./icons/icon-128.png"
+    }
   },
   "manifest_version": 2
 }

@@ -1,63 +1,19 @@
-<style>
-body {
-  margin: 20px;
-}
-.container {
-  text-align: center;
-  display: inline-block;
-  font-family: Georgia, serif;
-}
-.container #value {
-  margin: 0;
-  margin-bottom: 15px;
-}
-.arrow-icon {
-  position: relative;
-  display: inline-block;
-}
-.arrow-icon::before {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 0;
-  top: calc(-8px);
-  left: 50%;
-  transform: translateX(calc(-50%));
-  border: solid 3px transparent;
-  border-top-color: black;
-}
-.range {
-  --w: 200px;
-  width: var(--w);
-  overflow-x: hidden;
-  cursor: w-resize;
-}
-.flex {
-  display: flex;
-  padding: 0 calc(var(--w) / 2);
-  width: 300px;
-  height: 20px;
-  justify-content: space-between;
-}
-.flex div {
-  width: 1px;
-  height: 100%;
-  background-color: #666;
-}
-</style>
+<html>
+  <head>
+    <link rel="stylesheet" href="./css/index.css">
+  </head>
+  <body>
 
-<body>
-  <div class="container">
-    <p id="value">0.00</p>
-    <div class="arrow-icon">
-      <div class="range">
-        <div class="flex"></div>
+    <p id="value" data-is-default>1.00</p>
+
+    <div class="arrow">
+      <div id="container">
+        <div id="range"></div>
       </div>
     </div>
-  </div>
 
-<script src="./jquery.min.js"></script>
-<script src="./scrollbooster.min.js"></script>
-<script src="./popup.js"></script>
-
-</body>
+    <script src="./vendor/scrollbooster.min.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
