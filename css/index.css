@@ -2,6 +2,17 @@ body {
   margin: 20px;
   text-align: center;
   font-family: Georgia, serif;
+  color: black;
+}
+
+/**
+ * Valor
+ */
+#value {
+  margin: 0;
+  margin-bottom: 1em;
+  font-weight: bold;
+  font-size: 2em;
 }
 
 /**
@@ -16,11 +27,11 @@ body {
   position: absolute;
   width: 0;
   height: 0;
-  top: calc(-8px);
+  top: -90%;
   left: 50%;
   transform: translateX(calc(-50%));
-  border: solid 3px transparent;
-  border-top-color: black;
+  border: solid 6px transparent;
+  border-top-color: currentColor;
 }
 
 /**
@@ -40,7 +51,7 @@ body {
   justify-content: space-between;
 }
 .rate {
-  width: 1px;
+  width: 2px;
   height: 100%;
-  background-color: #666;
+  background-color: currentColor;
 }
