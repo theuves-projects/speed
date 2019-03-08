@@ -31,15 +31,23 @@ function initPlaybackRate() {
   chrome.tabs.query({ currentWindow: true, active : true }, function (tabArr) {
     chrome.tabs.sendMessage(tabArr[0].id, 'GET_DEFAULT_PLAYBACK_RATE', {}, function (res) {
       if (!res) {
-        return
+        return;
       }
 
       var defaultPlaybackRate = res.defaultPlaybackRate;
+
+      if (defaultPlaybackRate === false) {
+        document.getElementById('no-video').style.display = 'block';
+        return;
+      }
+
+      document.getElementById('no-video').style.display = 'none';
+
       var container = document.getElementById('container');
-      var value = document.getElementById('value')
+      var value = document.getElementById('value');
 
       value.innerText = defaultPlaybackRate.toFixed('2');
-      container.scrollLeft = rateToScroll(defaultPlaybackRate, 3, 1, 300, 0)
+      container.scrollLeft = rateToScroll(defaultPlaybackRate, 3, 1, 300, 0);
     });
   });
 }
@@ -52,7 +60,7 @@ function plotRates() {
 
   for (var i = 0; i < RATES; i++) {
     var rate = document.createElement('div');
-    rate.classList.add('rate')
+    rate.classList.add('rate');
 
     range.appendChild(rate);
   }
@@ -64,7 +72,7 @@ function plotRates() {
 function configScrollEffect() {
   var container = document.getElementById('container');
   var range = container.querySelector('#range');
-  var value = document.getElementById('value')
+  var value = document.getElementById('value');
 
   //
   // Documentation: <https://github.com/ilyashubin/scrollbooster#readme>
@@ -81,7 +89,7 @@ function configScrollEffect() {
   // Quando o usuário selecionar um valor
   function onUpdate(data) {
     if (value.hasAttribute('data-is-default')) {
-      value.removeAttribute('data-is-default')
+      value.removeAttribute('data-is-default');
       return;
     }
 

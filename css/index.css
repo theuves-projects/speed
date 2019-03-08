@@ -1,8 +1,32 @@
 body {
   margin: 15px 10px;
   text-align: center;
-  font-family: Georgia, serif;
+  font-family: Helvetica, Verdana, Arial, sans-serif;
   color: black;
+}
+
+* {
+  user-select: none !important;
+}
+
+.no-video {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, .95);
+}
+.no-video-msg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-weight: bold;
+  white-space: nowrap;
+  color: red;
 }
 
 /**
@@ -54,4 +78,12 @@ body {
   width: 2px;
   height: 100%;
   background-color: currentColor;
+}
+
+/**
+ * Keyframes
+ */
+@keyframes spinner {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(180deg); }
 }
