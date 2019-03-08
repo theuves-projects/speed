@@ -1,6 +1,6 @@
 {
   "name": "Speed",
-  "description": "A Chrome extension to controll the speed of videos.",
+  "description": "A Chrome extension to control the speed of videos.",
   "version": "0.0",
   "permissions": [
     "activeTab"
