@@ -8,7 +8,7 @@
 
 - Clone or download this repository
 - Open Google Chrome
-- Go to chrome://extensions/
+- Go to `chrome://extensions/`
 - Enable "Developer mode" option
 - Click in "Load unpacked"
 - Select the folder of this repository
