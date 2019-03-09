@@ -38,6 +38,9 @@ body {
   font-weight: bold;
   font-size: 2em;
 }
+#value::after {
+  content: 'x';
+}
 
 /**
  * Container que desenhará a seta para baixo
@@ -51,11 +54,11 @@ body {
   position: absolute;
   width: 0;
   height: 0;
-  top: -90%;
+  top: 0;
   left: 50%;
-  transform: translateX(calc(-50%));
   border: solid 6px transparent;
   border-top-color: currentColor;
+  transform: translate(-50%, -150%);
 }
 
 /**
@@ -68,16 +71,31 @@ body {
   cursor: w-resize;
 }
 #range {
+  --rate-height: 20px;
   display: flex;
   padding: 0 calc(var(--width) / 2);
   width: 300px;
-  height: 20px;
+  height: calc(var(--rate-height) + 2em);
   justify-content: space-between;
 }
 .rate {
+  position: relative;
   width: 2px;
-  height: 100%;
+  height: var(--rate-height);
+}
+.rate:not(.special) {
+  background-color: gray;
+}
+.rate.special {
   background-color: currentColor;
+}
+.rate.special::before {
+  content: attr(data-value) 'x';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  transform: translate(-50%, 0);
 }
 
 /**

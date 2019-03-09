@@ -62,6 +62,11 @@ function plotRates() {
     var rate = document.createElement('div');
     rate.classList.add('rate');
 
+    if (i % 2 === 0) {
+      rate.classList.add('special');
+      rate.setAttribute('data-value', 1 + i * 0.25)
+    }
+
     range.appendChild(rate);
   }
 }
